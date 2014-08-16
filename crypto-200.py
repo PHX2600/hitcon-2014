@@ -16,10 +16,14 @@ while 1:
     c2 = int(all[2])
     f = x**3-int(c1)
     g = (x+1)**3-int(c2)
-    print sympy.gcd(f, g, x)
+    q, r = sympy.div(f, g, x)
+    print q
+    print r
+    print sympy.gcd(g, r)
     print f
     print g
     print x
     #gcd = x - M (find m from expression above) send m
     s.send(str(int(1)) + "\n")
     print s.recv(10000)
+
